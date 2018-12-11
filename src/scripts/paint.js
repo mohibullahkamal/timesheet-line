@@ -9,5 +9,9 @@ export default function($element, layout) {
   var height = rect.height;
   var width = rect.width;
 
-  var svg = d3.select(element.querySelector('svg'));
+  var svg = d3
+    .select(element.querySelector('svg'))
+    .html('')
+    .attr('width', width)
+    .attr('height', height);
 }
