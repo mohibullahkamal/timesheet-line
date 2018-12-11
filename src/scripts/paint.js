@@ -14,4 +14,16 @@ export default function($element, layout) {
     .html('')
     .attr('width', width)
     .attr('height', height);
+
+  var margin = {
+    top: 10,
+    left: 10,
+    right: 50,
+    bottom: 10
+  };
+
+  var plot = svg
+    .append('g')
+    .classed('plot', true)
+    .attr('transform', `translate(${margin.left}.${margin.top}`);
 }
