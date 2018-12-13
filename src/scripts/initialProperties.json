@@ -1,0 +1,14 @@
+{
+  "qHyperCubeDef": {
+    "qDimensions": [],
+    "qMeasures": [],
+    "qInitialDataFetch": [
+      {
+        "qLeft": null,
+        "qTop": null,
+        "qWidth": null,
+        "qHeight": null
+      }
+    ]
+  }
+}
