@@ -5,10 +5,14 @@ export default {
   components: 'accordion',
   items: {
     dimentions: {
-      uses: 'dimensions'
+      uses: 'dimensions',
+      min: 1,
+      max: 1
     },
     measures: {
-      uses: 'measures'
+      uses: 'measures',
+      min: 1,
+      max: 1
     },
     settings: {
       uses: 'settings'
