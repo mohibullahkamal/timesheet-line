@@ -26,4 +26,7 @@ export default function($element, layout) {
     .append('g')
     .classed('plot', true)
     .attr('transform', `translate(${margin.left}.${margin.top}`);
+
+  var qMarix = layout.qHyperCube.qDataPage[0].qMarix;
+  console.log();
 }
