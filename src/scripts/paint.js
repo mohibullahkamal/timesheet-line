@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-export default function($element, layout) {
+export default function ($element, layout) {
   var qMarix = layout.qHyperCube.qDataPage[0].qMarix.sort((a, b) => {
     if (a[0].qNum < b[0].qNum) return -1;
     else return 1;
@@ -29,12 +29,13 @@ export default function($element, layout) {
     .domain(qMarix.map(d => d[0].qText))
     .range([0, plotWidth]);
 
-  var yScale;
+  var dataMax = layout.qHyperCube.qMeasureInfop[0].qMax;
 
-  var container = element.querySelector('.chart-cont');
-  var rect = container.getBoundingClientRect();
-  var height = rect.height;
-  var width = rect.width;
+  var yScale = d3
+    .scaleLinear()
+    .domain([0, Math.max(dataMax, 1)]);
+
+  var element = $element[0];
 
   var svg = d3
     .select(element.querySelector('svg'))
