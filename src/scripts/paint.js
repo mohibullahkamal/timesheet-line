@@ -21,6 +21,21 @@ export default function($element, layout) {
   var height = rect.height;
   var width = rect.width;
 
+  var plotWidth = width - margin.left - margin.right;
+  var plotHeight = height - margin.top - margnin.bottom;
+
+  var xScale = d3
+    .scalePoint()
+    .domain(qMarix.map(d => d[0].qText))
+    .range([0, plotWidth]);
+
+  var yScale;
+
+  var container = element.querySelector('.chart-cont');
+  var rect = container.getBoundingClientRect();
+  var height = rect.height;
+  var width = rect.width;
+
   var svg = d3
     .select(element.querySelector('svg'))
     .html('')
