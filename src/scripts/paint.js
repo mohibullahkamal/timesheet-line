@@ -50,6 +50,6 @@ export default function ($element, layout) {
     .classed('plot', true)
     .attr('transform', `translate(${margin.left}.${margin.top}`);
 
-  var qMarix = layout.qHyperCube.qDataPage[0].qMarix;
+  var qMatrix = layout.qHyperCube.qDataPage[0].qMatrix;
   console.log();
 }
