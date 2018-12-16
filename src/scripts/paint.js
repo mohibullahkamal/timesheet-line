@@ -35,7 +35,18 @@ export default function ($element, layout) {
     .scaleLinear()
     .domain([0, Math.max(dataMax, 1)]);
 
-  var element = $element[0];
+  var line = d3.line()
+    .x(d => xScale(d[0].qText))
+    .y(d => yScale([1].qNum));
+
+  var yAxis = d3.axisRight()
+    .scale(yScale)
+
+
+
+
+
+  // var element = $element[0];
 
   var svg = d3
     .select(element.querySelector('svg'))
