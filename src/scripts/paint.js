@@ -1,6 +1,9 @@
 import * as d3 from 'd3';
 
 export default function ($element, layout) {
+
+  console.log("layout", layout);
+
   var qMarix = layout.qHyperCube.qDataPage[0].qMarix.sort((a, b) => {
     if (a[0].qNum < b[0].qNum) return -1;
     else return 1;
@@ -41,9 +44,8 @@ export default function ($element, layout) {
 
   var yAxis = d3.axisRight()
     .scale(yScale)
-
-
-
+    .ticks(5)
+    .tickFormat(d3.format(",.%"));
 
 
   // var element = $element[0];
@@ -60,6 +62,12 @@ export default function ($element, layout) {
     .append('g')
     .classed('plot', true)
     .attr('transform', `translate(${margin.left}.${margin.top}`);
+
+  var gAxis = plot
+    .append("g")
+    .classed("y.axis", true)
+    .attr("transform", `translate(${plotWidth},0)`)
+    .call(yAxis);
 
   var qMatrix = layout.qHyperCube.qDataPage[0].qMatrix;
   console.log();
