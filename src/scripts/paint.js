@@ -9,6 +9,13 @@ export default function ($element, layout) {
     else return 1;
   });
 
+  var minIndex = d3.scan(qMatrix, (a, b) => a[1].qNum - b[1].qNum);
+  var minCell = qMatrix[minIndex];
+
+  var maxIndex = d3.scan(qMatrix, (a, b) => b[1].qNum - a[1].qNum);
+  var minCell = qMatrix[maxIndex];
+
+
   var margin = {
     top: 10,
     left: 10,
@@ -82,7 +89,12 @@ export default function ($element, layout) {
     .classed("chart-line", true)
     .attr("d", line(qMarix));
 
+  var minCircle = plot
+    .append("circle")
+    .classed("min-val", true)
+    .attr("cx", xScale(minCell[0].qText))
+    .attr("cy", yScale(minCell[1].qNum))
+    .attr("r", 3);
 
-  // var qMatrix = layout.qHyperCube.qDataPage[0].qMatrix;
-  // console.log();
+
 }
