@@ -69,6 +69,20 @@ export default function ($element, layout) {
     .attr("transform", `translate(${plotWidth},0)`)
     .call(yAxis);
 
-  var qMatrix = layout.qHyperCube.qDataPage[0].qMatrix;
-  console.log();
+  var refLine = plot
+    .classed("reference-line", true)
+    .append("line")
+    .attr("x1", 0)
+    .attr("x2", plotWidth)
+    .attr("y1", yScale(layout.refLine))
+    .attr("y2", yScale(layout.refLine));
+
+  var path = plot
+    .append("path")
+    .classed("chart-line", true)
+    .attr("d", line(qMarix));
+
+
+  // var qMatrix = layout.qHyperCube.qDataPage[0].qMatrix;
+  // console.log();
 }
