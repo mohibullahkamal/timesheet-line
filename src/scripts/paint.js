@@ -94,13 +94,23 @@ export default function ($element, layout) {
     .classed("min-val", true)
     .attr("cx", xScale(minCell[0].qText))
     .attr("cy", yScale(minCell[1].qNum))
-    .attr("r", 3);
+    .attr("r", 6);
 
   var maxCircle = plot
     .append("circle")
     .classed("max-val", true)
     .attr("cx", xScale(maxCell[0].qText))
     .attr("cy", yScale(maxCell[1].qNum))
-    .attr("r", 3);
+    .attr("r", 6);
 
+  var overlayG = plot.append("g");
+
+  var overlayCircles = overlayG.selectAll("circle")
+    .data(qMarix)
+    .enter()
+    .append("circle")
+    .classed("overlay", true)
+    .attr("cx", d => yScale(d[0].qText))
+    .attr("cy", d => yScale(d[1].qNum))
+    .attr("r", 10);
 }
