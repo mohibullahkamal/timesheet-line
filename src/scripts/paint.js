@@ -96,5 +96,11 @@ export default function ($element, layout) {
     .attr("cy", yScale(minCell[1].qNum))
     .attr("r", 3);
 
+  var maxCircle = plot
+    .append("circle")
+    .classed("max-val", true)
+    .attr("cx", xScale(maxCell[0].qText))
+    .attr("cy", yScale(maxCell[1].qNum))
+    .attr("r", 3);
 
 }
