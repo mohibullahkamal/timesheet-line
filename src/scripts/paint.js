@@ -113,4 +113,10 @@ export default function ($element, layout) {
     .attr("cx", d => yScale(d[0].qText))
     .attr("cy", d => yScale(d[1].qNum))
     .attr("r", 10);
+
+  overlayCircles.on("mouseenter", d => {
+
+  });
 }
+
+
