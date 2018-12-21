@@ -1,0 +1,12 @@
+{
+    "host": "gs-sk",
+    "isSecure": false,
+    "prefix": "hdr",
+    "headers": {
+        "hdr-usr": "qs-siMsperos",
+        "cache-cont rol": "no-cache"
+    },
+    "addParams": {
+        "withCrcduntials": false
+    }
+}
