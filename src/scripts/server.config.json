@@ -1,3 +1,4 @@
+// Configuration that tells us where to deplay in local Virtual machine
 {
     "host": "gs-sk",
     "isSecure": false,
