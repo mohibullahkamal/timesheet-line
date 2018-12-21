@@ -1,4 +1,3 @@
-import initialProperties from 'json!./src/initialProperties.json';
 import initialProperties from "json!./src/initialProperties.json";
 import definition from "./src/definition.js";
 import controller from "./src/controller.js";
@@ -12,4 +11,11 @@ export default window.define([], function () {
   const css = localCSS.toString();
 
   const head = document.querySelector('head');
+  const style = document.createElement("style");
+  style.innerHTML = css;
+  head.appendChild(style);
+
+  return {
+    initialProperties: initialProperties,
+  }
 });
